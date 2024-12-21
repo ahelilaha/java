@@ -3,6 +3,7 @@ public class Main {
         Explore exp = new Explore();
         exp.testTypeCasting();
         exp.testDataOverflow();
+        exp.testOperator();
     }
 }
 
@@ -19,5 +20,11 @@ class Explore {
    void testDataOverflow() {
         byte d = (byte) 128;
         System.out.println(d);
+    }
+
+    void testOperator() {
+        System.out.println(10 ^ 16); // bitwise exclusive OR
+        System.out.println(8 & 7); // bitwise AND
+        System.out.println(8 | 7); // bitwise OR
     }
 }
