@@ -4,6 +4,7 @@ public class Main {
         exp.testTypeCasting();
         exp.testDataOverflow();
         exp.testOperator();
+        Explore.checkNumber(0);
     }
 }
 
@@ -26,5 +27,15 @@ class Explore {
         System.out.println(10 ^ 16); // bitwise exclusive OR
         System.out.println(8 & 7); // bitwise AND
         System.out.println(8 | 7); // bitwise OR
+    }
+
+    public static void checkNumber(int number) {
+        if(number > 0) {
+            System.out.println("positive");
+        } else if(number < 0) {
+            System.out.println("negative");
+        } else {
+            System.out.println("zero");
+        }
     }
 }
