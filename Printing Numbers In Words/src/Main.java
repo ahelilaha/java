@@ -3,7 +3,7 @@ public class Main {
         Main.printNumberInWord(11);
     }
 
-    public static void printNumberInWord(int number){
+    public static void printNumberInWord(int number) {
         switch (number) {
             case 0:
                 System.out.println("ZERO");
