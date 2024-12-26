@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        Main.printYearsAndDays(7429098);
-        Main.printEqual(23, 45, 45);
+        Main.printYearsAndDays(1440000);
+        Main.printEqual(45, 4, 0);
         System.out.println(isCatPlaying(true, 30));
     }
 
@@ -12,10 +12,15 @@ public class Main {
         if(minutes < 0){
             System.out.println("Invalid Value");
         }else {
-            long years = minutes/525600;
-            long days = (minutes%525600)/1440;
-
-            System.out.println(minutes + " Min = " + years + " Years and " + days + " Days");
+            // 365 days in a year
+            // A day has 24 hours
+            // An hour has 60 mins
+            final long minsPerDay = 60*24;
+            final long minuesPerYear = minsPerDay*365;
+            long years = minutes/minuesPerYear;
+            long days = (minutes%minuesPerYear)/minsPerDay;
+            long mins = (minutes%minsPerDay);
+            System.out.println(minutes + " Min = " + years + " Years and " + days + " Days " + mins + " mins");
 
         }
     }
@@ -35,7 +40,11 @@ public class Main {
 
     //Playing Cat
     public static boolean isCatPlaying(boolean summer, int temperature) {
-        int upperLimit = summer ? 45 : 35;
-        return temperature >= 25 && temperature <= upperLimit;
+        int tempUpperLimit = 35;
+        if (summer) {
+            tempUpperLimit = 45;
+        }
+
+        return (temperature >= 25 && temperature <= tempUpperLimit);
     }
 }
