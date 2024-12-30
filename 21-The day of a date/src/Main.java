@@ -3,11 +3,11 @@ import static java.lang.System.exit;
 public class Main {
     public static void main(String[] args) {
 
-        // Step 1: fetching date
+        // Step 1: fetching date & validate it
         FetchDate fetchDate = new FetchDate();
-        int day = fetchDate.fetchDay();
-        if (day == -1) {
-            System.out.println("Invalid day value, STOP!!!");
+        int year = fetchDate.fetchYear();
+        if (year == -1) {
+            System.out.println("Invalid year value, STOP!!!");
             exit(0);
         }
 
@@ -17,9 +17,9 @@ public class Main {
             exit(0);
         }
 
-        int year = fetchDate.fetchYear();
-        if (year == -1) {
-            System.out.println("Invalid year value, STOP!!!");
+        int day = fetchDate.fetchDay(year, month);
+        if (day == -1) {
+            System.out.println("Invalid day value, STOP!!!");
             exit(0);
         }
 
@@ -27,12 +27,10 @@ public class Main {
         InputDate date = new InputDate(day, month, year);
         System.out.println(date.toString());
 
-        // Step 3: validate inputDate
-
-
-        // Step 4: Calculate odd days
-
-
+        // Step 3: Calculate odd days
+        CalendarDay calendarDay = new CalendarDay();
+        String oddDay = calendarDay.calculate(date);
+        System.out.println("Day is " + oddDay);
     }
 }
 

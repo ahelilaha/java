@@ -11,7 +11,7 @@ public class InputDate {
     }
 
     @Override
-    public String toString() {
+    public String toString() { // All java class internally extends "Object"
         return month + "-" + day + "-" + year;
     }
 
