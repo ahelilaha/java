@@ -16,7 +16,7 @@ public class CalendarDay {
         int oddDaysNon100 = (leapYears * 2 + ordinaryYears);
 
         int totalOddDaysForR400 = oddDaysNon100 + oddDaysForR100;
-
+        
         // 4. calculate for final year --> 01.01.year to date (number of days) - days
         int sumDays = 0;
         for (int i = 1; i < date.getMonth(); i++) {
