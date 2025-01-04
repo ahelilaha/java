@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Dog d = new Dog();
+        Animal d = new Dog();
         System.out.println(d.describeMe());
 
-        Cat c = new Cat();
+        Animal c = new Cat();
         System.out.println(c.describeMe());
     }
 }
@@ -15,10 +15,18 @@ abstract class Animal {
 
     abstract String speak();
     abstract String describeMe();
+    String nonAbstractMethod() {
+        return "inside non-abstract method";
+    }
+}
+
+abstract class Mammal {
+    abstract Integer numberOfYearsToFeed();
 }
 
 /// Inheritence
 /// Dog is extending abstract Animal class.
+/// ⚛️ -- Java does not support multiple inheritance, you cannot extend another class in child class.
 class Dog extends Animal {
 
     @Override
