@@ -19,5 +19,26 @@ public class Main {
                 true
         );
         System.out.println(diya.toString());
+
+        Person ashis = new Teacher(
+                "Ashis",
+                "Laha",
+                35,
+                Gender.male,
+                "Sammamish, WA",
+                true
+        );
+        System.out.println(ashis.toString());
+
+        Person livy = new Teacher(
+                "Livy",
+                "Shivraj",
+                57,
+                Gender.female,
+                "Hydrebad, India",
+                true
+        );
+        System.out.println(livy.toString());
     }
+
 }
